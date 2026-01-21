@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.slide {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Slide màu khác nhau */
+.slide1 { background: #1abc9c; color: white; }
+.slide2 { background: #3498db; color: white; }
+.slide3 { background: #9b59b6; color: white; }
+
+/* Animation */
+.slide h1, .slide h2, .slide p, .slide img {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.slide.active h1,
+.slide.active h2,
+.slide.active p,
+.slide.active img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
