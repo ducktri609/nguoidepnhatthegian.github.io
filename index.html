@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Thiệp Tình Yêu 💌</title>
+<title>Người đẹp nhất thế gian 💌</title>
 <style>
     body {
         margin: 0;
@@ -40,6 +40,9 @@
     .envelope.open::before {
         transform: rotateX(180deg);
     }
+    .envelope.show {
+        transform: translateY(500%);
+    }
 
     .letter {
         position: absolute;
@@ -48,16 +51,13 @@
         width: 280px;
         height: 180px;
         background: white;
-        transform: translateY(100%);
+        transform: translateY(0);
         transition: 0.5s;
         padding: 15px;
         box-sizing: border-box;
         overflow: hidden;
     }
 
-    .letter.show {
-        transform: translateY(0);
-    }
 
     .content {
         opacity: 0;
@@ -104,7 +104,7 @@
             envelope.classList.add('open');
         } 
         else if (clickCount === 2) {
-            letter.classList.add('show');
+            envelope.classList.add('show');
         } 
         else if (clickCount === 3) {
             content.classList.add('show');
