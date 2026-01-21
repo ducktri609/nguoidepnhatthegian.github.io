@@ -18,16 +18,16 @@ body {
 /* Scene */
 .scene {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
 }
 
 /* ENVELOPE */
 .envelope {
     position: absolute;
     top: 0;
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: 400px;
     background: #ff6f91;
     cursor: pointer;
     z-index: 2;
@@ -40,9 +40,9 @@ body {
     left: 0;
     width: 0;
     height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 100px solid #ff3f6c;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 200px solid #ff3f6c;
     transform-origin: top;
     transition: 0.5s;
 }
@@ -58,7 +58,7 @@ body {
 
 @keyframes fallDown {
     to {
-        transform: translateY(400px);
+        transform: translateY(700px);
         opacity: 0;
     }
 }
@@ -91,7 +91,7 @@ body {
     max-height: 100%;
     border-radius: 8px;
     opacity: 0;
-    transform: scale(1);
+    transform: scale(2);
     transition: 2s;
 }
 
