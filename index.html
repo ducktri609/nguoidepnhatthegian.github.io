@@ -59,7 +59,7 @@ body {
 
 @keyframes fallDown {
     to {
-        transform: translateY(400px);
+        transform: translateY(500px);
         opacity: 0;
     }
 }
@@ -115,6 +115,26 @@ body {
 </div>
 
 <script>
+
+function createHearts() {
+    for (let i = 0; i < 11; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'heart';
+        heart.innerText = '❤️';
+
+        // vị trí ngẫu nhiên quanh envelope
+        heart.style.left = Math.random() * 350 + 'px';
+        heart.style.top = '180px';
+
+        document.querySelector('.scene').appendChild(heart);
+
+        // tự xoá sau animation
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
+}
+
 let clickCount = 0;
 
 const envelope = document.getElementById('envelope');
@@ -129,6 +149,7 @@ envelope.addEventListener('click', () => {
     else if (clickCount === 2) {
         envelope.classList.add('fall');
         letter.classList.add('show');
+        createHearts(); // 💖 TRÁI TIM BAY
     }
 });
 </script>
