@@ -2,7 +2,8 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Nguoidepnhatthegian 💌</title>
+<title>Love Letter 💌</title>
+
 <style>
     body {
         margin: 0;
@@ -14,16 +15,38 @@
         font-family: 'Segoe UI', sans-serif;
     }
 
-    .envelope {
+    .container {
         position: relative;
+        width: 300px;
+        height: 220px;
+    }
+
+    /* LETTER (ĐỨNG YÊN) */
+    .letter-img {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 280px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        z-index: 1;
+    }
+
+    /* ENVELOPE */
+    .envelope {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 300px;
         height: 200px;
         background: #ff6f91;
         cursor: pointer;
-        transition: 0.5s;
+        z-index: 3;
+        transition: transform 1s ease-in;
     }
 
-    .envelope{
+    .envelope::before {
         content: '';
         position: absolute;
         top: 0;
@@ -33,82 +56,54 @@
         border-left: 150px solid transparent;
         border-right: 150px solid transparent;
         border-top: 100px solid #ff3f6c;
-        transform-origin: top;
-        transition: 0.5s;
     }
 
-    .envelope.open {
-        transform: rotateX(180deg);
-    }
-
-    .letter:before {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        width: 280px;
-        height: 180px;
-        background: white;
-        transform: translateY(100%);
-        transition: 0.5s;
-        padding: 15px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .letter.show:before {
-        transform: translateY(0);
-    }
-
-    .content {
+    /* RƠI XUỐNG */
+    .envelope.fall {
+        transform: translateY(350px) rotate(10deg);
         opacity: 0;
-        transition: 0.5s;
-        font-size: 16px;
-        color: #ff3f6c;
+    }
+
+    /* NỘI DUNG */
+    .content {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        width: 240px;
+        background: rgba(255,255,255,0.85);
+        padding: 12px;
+        border-radius: 10px;
         text-align: center;
-    }
-
-    .content.show {
-        opacity: 1;
-    }
-
-    h2 {
-        margin-top: 20px;
+        color: #ff3f6c;
+        z-index: 2;
     }
 </style>
 </head>
 <body>
 
-<div class="envelope" id="envelope">
-    <div class="letter" id="letter">
-        <div class="content" id="content">
-            <h2>💖 Gửi người anh yêu 💖</h2>
-            <p>
-                Anh không giỏi nói lời ngọt ngào,<br>
-                nhưng anh thật lòng yêu em rất nhiều.<br><br>
-                Cảm ơn em đã đến bên anh 🌷
-            </p>
-        </div>
+<div class="container">
+
+    <!-- LETTER (KHÔNG DI CHUYỂN) -->
+    <img src="letter.png" class="letter-img">
+
+    <div class="content">
+        <h3>💖 Gửi em 💖</h3>
+        <p>
+            Anh yêu em nhiều lắm 🥰<br>
+            Mong là em sẽ mỉm cười khi đọc thư này 💕
+        </p>
     </div>
+
+    <!-- ENVELOPE -->
+    <div class="envelope" id="envelope"></div>
+
 </div>
 
 <script>
-    let clickCount = 0;
     const envelope = document.getElementById('envelope');
-    const letter = document.getElementById('letter');
-    const content = document.getElementById('content');
 
     envelope.addEventListener('click', () => {
-        clickCount++;
-
-        if (clickCount === 1) {
-            envelope.classList.add('open');
-        } 
-        else if (clickCount === 2) {
-            letter.classList.add('show');
-        } 
-        else if (clickCount === 3) {
-            content.classList.add('show');
-        }
+        envelope.classList.add('fall');
     });
 </script>
 
