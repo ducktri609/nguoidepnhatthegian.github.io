@@ -2,24 +2,33 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Web kiểu Canva</title>
+  <title>Slide Web PowerPoint</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="slide slide1">
-    <h1>Xin chào 👋</h1>
-    <p>Đây là slide đầu tiên</p>
+<div id="slides">
+
+  <!-- SLIDE 1 -->
+  <section class="slide active">
+    <h1 class="step">Bài thuyết trình Web</h1>
+    <p class="step">Làm giống PowerPoint bằng HTML</p>
   </section>
 
-  <section class="slide slide2">
-    <img src="images/demo.jpg" alt="ảnh minh họa">
-    <h2>Hình ảnh + Animation</h2>
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <h2 class="step">Cơ chế hoạt động</h2>
+    <img class="step from-left" src="images/img1.png">
+    <img class="step from-right" src="images/img2.png">
   </section>
 
-  <section class="slide slide3">
-    <h2>Cảm ơn đã xem</h2>
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <h2 class="step zoom">Cảm ơn bạn!</h2>
+    <p class="step">GitHub Pages + Slide Web</p>
   </section>
+
+</div>
 
 <script src="script.js"></script>
 </body>
