@@ -15,7 +15,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Container */
+/* Scene */
 .scene {
     position: relative;
     width: 300px;
@@ -30,7 +30,6 @@ body {
     height: 200px;
     background: #ff6f91;
     cursor: pointer;
-    transition: transform 0.5s;
     z-index: 2;
 }
 
@@ -64,7 +63,7 @@ body {
     }
 }
 
-/* LETTER (đứng yên) */
+/* LETTER */
 .letter {
     position: absolute;
     top: 20px;
@@ -72,31 +71,33 @@ body {
     width: 280px;
     height: 180px;
     background: white;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
     opacity: 0;
     transition: 0.5s;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .letter.show {
     opacity: 1;
 }
 
-.content {
+/* IMAGE INSIDE LETTER */
+.letter img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
     opacity: 0;
-    transition: 0.5s;
-    font-size: 16px;
-    color: #ff3f6c;
-    text-align: center;
+    transform: scale(0.9);
+    transition: 0.6s;
 }
 
-.content.show {
+.letter.show img {
     opacity: 1;
-}
-
-h2 {
-    margin-top: 20px;
+    transform: scale(1);
 }
 </style>
 </head>
@@ -107,14 +108,8 @@ h2 {
     <div class="envelope" id="envelope"></div>
 
     <div class="letter" id="letter">
-        <div class="content" id="content">
-            <h2>💖 Gửi người anh yêu 💖</h2>
-            <p>
-                Anh không giỏi nói lời ngọt ngào,<br>
-                nhưng anh thật lòng yêu em rất nhiều.<br><br>
-                Cảm ơn em đã đến bên anh 🌷
-            </p>
-        </div>
+        <!-- 🔽 THAY LINK ẢNH TẠI ĐÂY -->
+        <img src="letter.png" alt="Love">
     </div>
 </div>
 
@@ -123,7 +118,6 @@ let clickCount = 0;
 
 const envelope = document.getElementById('envelope');
 const letter = document.getElementById('letter');
-const content = document.getElementById('content');
 
 envelope.addEventListener('click', () => {
     clickCount++;
@@ -134,13 +128,9 @@ envelope.addEventListener('click', () => {
     else if (clickCount === 2) {
         envelope.classList.add('fall');
         letter.classList.add('show');
-    } 
-    else if (clickCount === 3) {
-        content.classList.add('show');
     }
 });
 </script>
 
 </body>
 </html>
-
