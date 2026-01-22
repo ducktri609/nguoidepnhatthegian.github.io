@@ -114,7 +114,7 @@ body {
     background: #ff6f91;
     cursor: pointer;
     z-index: 2;
-    transform: scale(2);
+    transform: scale(1);
 }
 
 .envelope::before {
@@ -167,13 +167,13 @@ body {
     max-width: 100%;
     border-radius: 8px;
     opacity: 0;
-    transform: scale(2);
+    transform: scale(1);
     transition: 2s;
 }
 
 .letter.show img {
     opacity: 1;
-    transform: scale(6);
+    transform: scale();
 }
 </style>
 </head>
@@ -196,8 +196,8 @@ body {
         <button onclick="press('8')">8</button>
         <button onclick="press('9')">9</button>
         <button onclick="press('0')">0</button>
-        <button class="delete" onclick="del()">Del</button>
-        <button class="wide" onclick="enterCode()">Enter</button>
+        <button class="delete" onclick="del()">Xóa</button>
+        <button class="wide" onclick="enterCode()">Nhập</button>
     </div>
 </div>
 
